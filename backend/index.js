@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 import mysql from "mysql2/promise";
-import { DB_USERNAME, DB_PASSWORD } from "./Const.js";
+import { DB_USERNAME, DB_PASSWORD, DB_HOST, DB } from "./Const.js";
 import db from "./dbConfig.js";
 import VirtualShelf from "./models/VirtualShelf.js";
 import Book from "./models/Book.js";
@@ -25,8 +25,10 @@ let conn;
 
 mysql
   .createConnection({
+    host: DB_HOST,
     user: DB_USERNAME,
     password: DB_PASSWORD,
+    database: DB
   })
   .then((connection) => {
     conn = connection;

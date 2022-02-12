@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import { DB_USERNAME, DB_PASSWORD } from './Const.js';
+import { DB_USERNAME, DB_PASSWORD, DB } from './Const.js';
 
 const db = new Sequelize({
     dialect: 'mysql',

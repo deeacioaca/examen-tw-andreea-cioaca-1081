@@ -25,14 +25,16 @@ let conn;
 
 mysql
   .createConnection({
-    host: DB_HOST,
+    //host: DB_HOST,
     user: DB_USERNAME,
     password: DB_PASSWORD,
-    database: DB
+    database: "shelf"
+    // database: DB,
   })
   .then((connection) => {
     conn = connection;
     return connection.query("CREATE DATABASE IF NOT EXISTS shelf");
+    // return connection.query("CREATE DATABASE IF NOT EXISTS heroku_97312aeed9148fb");
   })
   .then(() => {
     return conn.end();
